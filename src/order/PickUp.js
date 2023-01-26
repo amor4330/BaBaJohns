@@ -1,7 +1,7 @@
 
 
 
-const TakeOut = () => {
+const PickUp = () => {
 
    return (
       <>
@@ -11,4 +11,4 @@ const TakeOut = () => {
    )
 }
 
-export default TakeOut;
+export default PickUp;
