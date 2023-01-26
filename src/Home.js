@@ -1,7 +1,7 @@
 
 
 
-const Menu = () => {
+const Home = () => {
 
    return (
       <>
@@ -11,4 +11,4 @@ const Menu = () => {
    )
 }
 
-export default Menu;
+export default Home;
