@@ -1,8 +1,8 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import PopupDom from './PopupDom';
 import PopupPostCode from './PopupPostCode';
 
-import './delivery.css';
+import delivery from './delivery.module.css';
 import UserContext from './UserContext';
 
 const Delivery2 = () => {
@@ -29,11 +29,11 @@ const Delivery2 = () => {
     
     return (
         <>
-            <div className="search">
-                <h3>배달 주소 검색</h3>
-                <button type="button" onClick={openPostCode} className="regist">신규 등록</button>
+            <div className={delivery.search}>
+                <h3>배달 주소 검색</h3><br/>
+                <button type="button" onClick={openPostCode} className={delivery.regist}>검색</button>
 
-                <div id='popupDom' className="popupDom">
+                <div id='popupDom' className={delivery.popupDom}>
                     {isPopupOpen && (
                         <PopupDom>
                             <PopupPostCode onClose={closePostCode} />
@@ -44,9 +44,11 @@ const Delivery2 = () => {
 
             <div>
                 <p>배달 가능 매장 : </p>
-                <input type="text" className="address" placeholder="기본 주소" /><br />
-                <input type="text" className="address" placeholder="상세 주소" />
+                <input type="text" className={delivery.address} placeholder="기본 주소" value = {total.delAddr}/><br />
+                <input type="text" className={delivery.address} placeholder="상세 주소" />
             </div>
+
+                <button type = "button" className={delivery.regist}>주문 진행</button>
 
         </>
     )

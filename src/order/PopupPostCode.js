@@ -1,17 +1,18 @@
 import DaumPostcode from "react-daum-postcode";
 import UserContext from './UserContext';
-import {useContext}  from "react";
+import { useContext, useEffect } from "react";
 
 const PopupPostCode = (props) => {
-  const {address, action} = useContext(UserContext);
-  console.log(address);
+  const { ...total } = useContext(UserContext);
+
+  //이거 이벤트핸들러에서 활용하면 됩니다
+  useEffect(() => {
+  }, [total.delAddr])
 
   // 우편번호 검색 후 주소 클릭 시 실행될 함수, data callback 용
-  const handlePostCode = (data) => {
+  const HandlePostCode = (data) => {
     let fullAddress = data.address;
     let extraAddress = '';
-
-    
 
     if (data.addressType === 'R') {
       if (data.bname !== '') {
@@ -21,16 +22,14 @@ const PopupPostCode = (props) => {
         extraAddress += (extraAddress !== '' ? `, ${data.buildingName}` : data.buildingName);
       }
       fullAddress += (extraAddress !== '' ? ` (${extraAddress})` : '');
+      total.action.setDelAddr(fullAddress);
     }
-    console.log(data)
-    console.log(fullAddress)
-    console.log(data.zonecode)
-    console.log(props);
-    action.setAddress(fullAddress);
+
+    // console.log(data)
+    // console.log(fullAddress)
+    // console.log(data.zonecode)
+    // console.log(props);
     props.onClose()
-
-    
-
   }
 
   const postCodeStyle = {
@@ -43,10 +42,11 @@ const PopupPostCode = (props) => {
 
   return (
     <div>
-      <DaumPostcode style={postCodeStyle} onComplete={handlePostCode} />
-      <div>{props.data}</div>
+      
+      <DaumPostcode style={postCodeStyle} onComplete={HandlePostCode} />
 
-      <button type='button' onClick={() => { props.onClose() }} className='postCode_btn'>닫기</button>
+      <div>{props.data}</div>
+      {<button type='button' onClick={() => { props.onClose() }} className='postCode_btn'>　X　</button>}<br/>
 
     </div>
   )
