@@ -47,8 +47,6 @@ const Delivery2 = () => {
                 <input type="text" className={delivery.address} placeholder="상세 주소" />
             </div>
 
-                <button type = "button" className={delivery.regist}>주문 진행</button>
-
         </>
     )
 }
