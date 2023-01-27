@@ -1,0 +1,42 @@
+
+
+.container {
+   margin:0, auto;
+   display: flex;
+   justify-content: center;
+   width: 100%;
+}
+
+
+.container .left {
+   width: 500px;
+   height: 400px;
+}
+.container .left .list {
+   height: 400px;
+   overflow-y: scroll;
+}
+
+
+
+.list_container{
+   overflow: hidden;
+   box-sizing: border-box;
+}
+
+.list_container .list_input {
+   margin-top: 15px;
+   float: left;
+}
+.list_container .list_a {
+   margin: 0;
+   width: 95%;
+   margin-left:10px;
+   margin-bottom: 10px;
+   float: left;
+}
+
+.list_container .list_a:hover{
+   background: rgba(0, 0, 0, 0.3);
+   transition: all 0.5s;
+}

@@ -4,7 +4,7 @@ import Home from './Home';
 import Delivery from './order/delivery';
 import PickUp from './order/PickUp';
 import Menu from './halfandhalf/menu';
-import {BabaProvider } from './order/UserContext';
+import {BabaProvider } from './context/UserContext';
 
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
   return (
     
     <BabaProvider>
+    
       <Routes>
           <Route path = "/" element={<Home/>}/>
           <Route path="/menu" element={<Menu/>}/>
