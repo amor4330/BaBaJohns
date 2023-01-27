@@ -202,9 +202,114 @@
     font-weight: bolder;
 }
 
+/* 수량 */
+.detail_halfnhalf_num_count_wrap{
+    padding: 1rem 0 0;
+    text-align: right;
+}
+
+
+.num_count_box{
+    display: inline-flex;
+}
+
+.num_count_wrap_main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 15rem;
+    height: 3rem;
+    border-radius: 1rem;
+    border: 1px solid #ebebeb;
+}
+
+.btnL{
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    background-color: white;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border: 1px solid #ebebeb;
+    font-size: 60px;
+    line-height: 85px;
+    
+}
+
+.btnR{
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    background-color: white;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border: 1px solid #ebebeb;
+    line-height: 50px;
+    font-size: 50px;
+}
+
+.num_count_value{
+    width: 9rem;
+    height: 3rem;
+    text-align: center;
+    font-size: 1.4rem;
+    color: black;
+    border: 1px solid #ebebeb;
+}
+
 /* 가격 */
 .fixed_payment_wrap{
     position: fixed;
-    background-color: red;
-    height: 100px;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    background-color: #da291c;
+    height: 8rem;
+}
+
+.fixed_payment_box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 97rem;
+    height: 8rem;
+    margin: 0 auto;
+}
+
+.txt_wrap{
+    text-align: right;
+}
+
+.fixed_payment_wrap .label{
+    display: inline-block;
+    font-size: 1.3rem;
+    color: #ffffff;
+}
+
+.fixed_payment_wrap .price{
+    display: inline-block;
+    margin-left: 1rem;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+/* 주문하기 버튼 */
+.fixed_payment_box button{
+    margin: 0;
+    padding: 0 1rem 0 0;
+    background: transparent;
+    border: 0;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 510;
+    cursor: pointer;
+}
+
+.buttonIcon{
+    height: 4rem;
+    padding-right: 6px;
+    margin-bottom: 6px;
+    vertical-align: middle;
 }
