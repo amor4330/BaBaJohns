@@ -7,20 +7,87 @@ const Menu = () => {
    const leftImgPizza = useRef(null);
    const rigthImgPizza = useRef(null);
 
-   
-   // 사이즈바꾸기
-   const [size,setSize] = useState('large');
-   const sizeChange = (e) => {
-      setSize(e.target.dataset.sizeName);
-   }
-   console.log(size);
+
+   //금액바꾸기
+   const [orderPrice, setOrderPrice] = useState(29000);
 
    // 도우바꾸기
    const [dough, setDough] = useState("10")
    const doughClick = (e) => {
       setDough(e.target.value);
+      if (size === 'large') {
+         if (e.target.value === '10') {
+            setOrderPrice(29000);
+         } else if (e.target.value === '20') {
+            setOrderPrice(34400);
+         } else if (e.target.value === '30') {
+            setOrderPrice(33000);
+         } else if (e.target.value === '40') {
+            setOrderPrice(33000);
+         }
+      } else if (size === 'family') {
+         if (e.target.value === '10') {
+            setOrderPrice(34400);
+         } else if (e.target.value === '20') {
+            setOrderPrice(34400);
+         } else if (e.target.value === '30') {
+            setOrderPrice(39400);
+         } else if (e.target.value === '40') {
+            setOrderPrice(39400);
+         }
+      } else if (size === 'party') {
+         if (e.target.value === '10') {
+            setOrderPrice(42500);
+         } else if (e.target.value === '20') {
+            setOrderPrice(42500);
+         } else if (e.target.value === '30') {
+            setOrderPrice(48500);
+         } else if (e.target.value === '40') {
+            setOrderPrice(48500);
+         }
+      }
    }
-   
+
+   // 사이즈바꾸기
+   const [size, setSize] = useState('large');
+   const sizeChange = (e) => {
+      setSize(e.target.dataset.sizeName);
+      if (dough === '10') {
+         if (e.target.dataset.sizeName === 'large') {
+            setOrderPrice(29000);
+         } else if (e.target.dataset.sizeName === 'family') {
+            setOrderPrice(34400);
+         } else if (e.target.dataset.sizeName === 'party') {
+            setOrderPrice(42500);
+         }
+      } else if (dough === '20') {
+         if (e.target.dataset.sizeName === 'large') {
+            setOrderPrice(29000);
+         } else if (e.target.dataset.sizeName === 'family') {
+            setOrderPrice(34400);
+         } else if (e.target.dataset.sizeName === 'party') {
+            setOrderPrice(39400);
+         }
+      } else if (dough === '30') {
+         if (e.target.dataset.sizeName === 'large') {
+            setOrderPrice(33000);
+         } else if (e.target.dataset.sizeName === 'family') {
+            setOrderPrice(39400);
+         } else if (e.target.dataset.sizeName === 'party') {
+            setOrderPrice(48500);
+         }
+      } else if (dough === '40') {
+         if (e.target.dataset.sizeName === 'large') {
+            setOrderPrice(33000);
+         } else if (e.target.dataset.sizeName === 'family') {
+            setOrderPrice(39400);
+         } else if (e.target.dataset.sizeName === 'party') {
+            setOrderPrice(48500);
+         }
+      }
+
+   }
+
    // 피자바꾸기
    const [pizzaL, setPizzaL] = useState(`1000`);
    const [pizzaR, setPizzaR] = useState(`1000`);
@@ -32,7 +99,24 @@ const Menu = () => {
       }
    }
 
+   //수량바꾸기
+   const [count, setCount] = useState(1);
+   const countButton = (e) => {
 
+      if (e.target.name === 'down') {
+         if (count === 1) {
+            setCount(count);
+         } else {
+            setCount(count - 1);
+         }
+      } else if (e.target.name === 'up') {
+         if (count === 5) {
+            setCount(count);
+         } else {
+            setCount(count + 1);
+         }
+      }
+   }
 
    return (
       <Fragment>
@@ -55,7 +139,7 @@ const Menu = () => {
                </div>
                <div className={menuCss.detail_main_wrap}>
                   <div className={menuCss.right}>
-                     <div className={`${menuCss.rightSelect} ${menuCss.boardTest}`}>
+                     <div className={menuCss.rightSelect}>
                         <div className={menuCss.rightwrap}>
                            <h3 className={menuCss.leftMenuShow}>두가지 맛의 절묘한 조화</h3>
                            <div className={menuCss.rightMenuShow}>하프앤하프</div>
@@ -79,7 +163,7 @@ const Menu = () => {
                                  <label className={menuCss.custom_radio}>
                                     <input type="radio" name="dough" value="20" onChange={doughClick} />
                                     <div className={`${menuCss.img_wrap} ${dough === '20' ? menuCss.choosed : ''}`}>
-                                       <img src="https://imgcdn.pji.co.kr/pc/img/dough_20_off.png" alt="씬 도우 배너"className={`${menuCss.icon} ${menuCss.off}`} />
+                                       <img src="https://imgcdn.pji.co.kr/pc/img/dough_20_off.png" alt="씬 도우 배너" className={`${menuCss.icon} ${menuCss.off}`} />
                                        <img src="https://imgcdn.pji.co.kr/pc/img/dough_20_on.png" alt="씬 도우 배너" className={`${menuCss.icon} ${menuCss.on}`} />
                                     </div>
                                  </label>
@@ -108,7 +192,7 @@ const Menu = () => {
                            <ul className={menuCss.detail_halfnhalf_size_wrap}>
                               <li>
                                  <label className={menuCss.custom_radio2}>
-                                    <input type="radio" name="size" data-size-name="large" onChange={sizeChange} defaultChecked/>
+                                    <input type="radio" name="size" data-size-name="large" onChange={sizeChange} defaultChecked />
                                     <div className={menuCss.size_info}>
                                        <div>라지</div>
                                        <div><small>2-3인용(31cm)</small></div>
@@ -173,14 +257,31 @@ const Menu = () => {
                         </div>
                      </div>
                   </div>
-                  <div className={menuCss.detailNotice}>
-                     <span>*상기 이미지는 실제 제품과 다를 수 있습니다.</span>
+                  <div className={menuCss.detail_halfnhalf_num_count_wrap}>
+                     <div className={menuCss.num_count_box}>
+                        <div className={menuCss.num_count_wrap_main}>
+                           <button className={`${menuCss.btnL} ${menuCss.btn_down}`} id="btnDownpizza" name="down" onClick={countButton} >‾</button>
+                           <input type="text" className={menuCss.num_count_value} readOnly value={count} />
+                           <button className={`${menuCss.btnR} ${menuCss.btn_up}`} id="btnUppizza" name="up" onClick={countButton} >+</button>
+                        </div>
+                     </div>
                   </div>
                </div>
             </div>
          </section>
          <section>
-            <div className={menuCss.fixed_payment_wrap}></div>
+            <div className={menuCss.fixed_payment_wrap}>
+               <div className={menuCss.fixed_payment_box}>
+                  <div className={menuCss.txt_wrap}>
+                     <div className={menuCss.label}>결재금액</div>
+                     <div className={menuCss.price}>{[orderPrice].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</div>
+                     <span className={menuCss.price}>원</span>
+                  </div>
+                  <div className={menuCss.btn_wrap}>
+                     <button className={menuCss.ntm_payment}><img src="https://imgcdn.pji.co.kr/pc/img/icon_detail_payment_old.png" className={menuCss.buttonIcon} alt="주문하기 아이콘" />주문하기</button>
+                  </div>
+               </div>
+            </div>
          </section>
       </Fragment >
    )
