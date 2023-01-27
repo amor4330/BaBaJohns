@@ -1,10 +1,12 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import UserContext from "../context/UserContext";
 
 const { kakao } = window;
 
 const KakaoMap = ({branch}) => {
 
-   
+   const {...total} = useContext(UserContext);
+
    useEffect(() => {
       const mapContainer = document.getElementById('map'), // 지도를 표시할 div 
       mapOption = { 
@@ -18,7 +20,7 @@ const KakaoMap = ({branch}) => {
       // 주소-좌표 변환 객체를 생성합니다
       const geocoder = new kakao.maps.services.Geocoder();
 
-      geocoder.addressSearch(branch.add, function(result, status) {
+      geocoder.addressSearch(total.puInfo.add, function(result, status) {
 
          // 정상적으로 검색이 완료됐으면 
           if (status === kakao.maps.services.Status.OK) {
@@ -33,7 +35,7 @@ const KakaoMap = ({branch}) => {
      
              // 인포윈도우로 장소에 대한 설명을 표시합니다
              var infowindow = new kakao.maps.InfoWindow({
-                 content: '<div style="width:150px;text-align:center;padding:6px 0;">바바존스 '+ branch.branch +'</div>'
+                 content: '<div style="width:100%;text-align:center;padding:6px 0;">바바존스 '+ total.puInfo.branch +'</div>'
              });
              infowindow.open(map, marker);
      
@@ -46,7 +48,7 @@ const KakaoMap = ({branch}) => {
       
    })
 
-   return <div id="map" style={{width:"50%", height:"350px"}}></div>
+   return <div id="map" style={{width:"100%", height:"350px"}}></div>
 
 }
 
