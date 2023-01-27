@@ -1,0 +1,44 @@
+body {
+    padding: 40px;
+}
+
+.address {
+    width: 400px;
+    height: 30px;
+    padding: 10px;
+    padding-top: 10px;
+    margin: 10px;
+}
+
+.search {
+    text-align: center;
+    padding: 10px;
+    padding-top: 30px ;
+}
+
+.popupDom {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.regist {
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.selectOrder {
+    text-align: center;
+}
+
+.orderbtn {
+    text-align: center;
+    border: none;
+    
+}
+.orderbtn1 {
+   display: inline-block;
+   border: none;  
+}
+

@@ -1,0 +1,12 @@
+:global adress {
+    display: block;
+    width: 100%
+}
+
+:global regist {
+    text-align: right;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    color: black;
+}
