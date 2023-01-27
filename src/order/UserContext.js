@@ -1,29 +1,35 @@
 import {createContext, useState} from 'react';
 
 
-const UserContext = createContext({
-    address : '아무거나', 
-    action : {
-        setAddress : () => {
 
-        }
-    }
+const UserContext = createContext({
 })
 
-const AdsProvider = ({children}) => {
-    const [address2, setAddress] = useState();
+const BabaProvider = ({children}) => {
+    const [delAddr, setDelAddr] = useState();
+    const [puInfo, setPuInfo] = useState();
+    const [menuInfo, setMenuInfo] = useState();
+    const [price, setPrice] = useState();
 
     const value = {
-        address: address2,
-        action : {setAddress}
+        delAddr : delAddr,
+        puInfo : puInfo,
+        menuInfo : menuInfo,
+        price : price,
+        action : {
+            setDelAddr,
+            setPuInfo,
+            setMenuInfo,
+            setPrice
+        }
     }
 
     return(
         <UserContext.Provider value={value}>{children}</UserContext.Provider>
     )
 } 
-const AdsConsumer = UserContext.Consumer;
+const BabaConsumer = UserContext.Consumer;
 
-export {AdsProvider, AdsConsumer};
+export {BabaProvider, BabaConsumer};
 
 export default UserContext;

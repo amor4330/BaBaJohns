@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import PopupDom from './PopupDom';
 import PopupPostCode from './PopupPostCode';
 
 import './delivery.css';
+import UserContext from './UserContext';
 
 const Delivery2 = () => {
 
@@ -19,8 +20,13 @@ const Delivery2 = () => {
         setIsPopupOpen(false);
     }
 
-    // const {address, action} = useContext(UserContext);
+    const {...total} = useContext(UserContext);
 
+    //이거 이벤트핸들러에서 활용하면 됩니다
+    // useEffect(()=> {
+    //     total.action.setDelAddr("test");
+    // }, [total.delAddr])
+    
     return (
         <>
             <div className="search">
