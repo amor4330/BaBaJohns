@@ -1,5 +1,6 @@
 import  { useState } from 'react';
 import Delivery2 from './Delivery2';
+import PickUp from './PickUp';
 
 //CSS파일 경로 링크
 import delivery from './delivery.module.css';
@@ -26,7 +27,7 @@ const Delivery = () => {
             {visible ? <img src="https://imgcdn.pji.co.kr/pc/img/orderway_2_off.png" /> :
             <img src = "https://imgcdn.pji.co.kr/pc/img/orderway_2_on.png" /> }
             </button>
-            {visible ? <Delivery2 /> : null}
+            {visible ? <Delivery2 /> : <PickUp />}
          </div>
       </>
    )
