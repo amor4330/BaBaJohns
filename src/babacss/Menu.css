@@ -1,0 +1,183 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+/* 메뉴고르는 전체 틀 */
+
+.detail_main_wrap{
+    display: flex;
+    padding:5rem;
+    border-bottom:0.5rem solid #f3f8f9;
+}
+
+
+.mainselect{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* 테스트용. 지울 것 */
+.board{
+    border:1px solid #777; 
+}
+.boardTest{
+    border:1px solid #777; 
+    width: 640px;
+    height: 402px;
+}
+
+/* 왼쪽 */
+/* 이미지 조절하기. 수정필요 */
+.leftImgBlock{
+    display: flex;
+    align-items: center;
+    border-radius: 1.6rem;
+    border: 1px solid #ebebeb;
+    overflow: hidden;
+}
+
+.leftImg{
+   float:left;
+}
+
+.rightImg{
+  float: right;
+}
+
+.detailNotice{
+    float: left;
+}
+
+/* 상기 이미지는 실제 제품과 다를 수 있습니다 */
+.detailNotice{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.6rem;
+    padding-bottom: 0;
+}
+
+.detailNotice>span{
+    font-size: 15px;
+    color: #c8c8c8;
+}
+
+/* 오른쪽 */
+
+
+.rightSelect{
+    padding: 45px;
+    padding-top: 10px;
+    border-radius: 1.6rem;
+    border: 1px solid #ebebeb;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+.rightwrap{
+    padding-top: 10px;
+    overflow: hidden;
+}
+
+.leftMenuShow{
+    float: left;
+}
+
+.rightMenuShow{
+    float: right;
+    border:2px solid red;
+    border-radius: 20px;
+    padding: 7px;
+    color: red;
+    font-size: 13px;
+    font-weight: bolder;
+}
+
+.rightwrap2{
+    padding-top: 10px;
+}
+
+/* 도우고르기 */
+.selectDough{
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.detail_halfnhalf_dough_wrap{
+    display: flex;
+    align-items: center;
+}
+
+.custom_radio{
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.custom_radio input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.icon{
+    height: 6rem;
+}
+
+
+.off{
+    display: block;
+}
+
+.on{
+    display: none;
+}
+
+.img_wrap.test > .off {
+    display: none;
+}
+
+
+.img_wrap.test > .on{
+    display: block;
+}
+
+
+
+
+/* 피자고르기 */
+.selectPizza{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.selector{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    height: 50px;
+    border: 1px solid #ebebeb;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+
+/* 하프앤하프 주문 공지 */
+.order_notice >span{
+    display: block;
+    font-size: 14px;
+    font-weight: bolder;
+}
