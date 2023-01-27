@@ -4,15 +4,23 @@ import Home from './Home';
 import Delivery from './order/delivery';
 import PickUp from './order/PickUp';
 import Menu from './halfandhalf/menu';
+import { AdsProvider } from './order/UserContext';
+
 
 function App() {
   return (
-    <Routes>
-      <Route path = "/" element={<Home/>}/>
-      <Route path="/menu" element={<Menu/>}/>
-      <Route path = "/delivery" element={<Delivery/>}/>
-      <Route path = "/pickUp" element={<PickUp/>}/>
-    </Routes>
+    
+    <AdsProvider>
+      <Routes>
+          <Route path = "/" element={<Home/>}/>
+          <Route path="/menu" element={<Menu/>}/>
+          <Route path = "/delivery" element={<Delivery/>}/>
+          <Route path = "/pickUp" element={<PickUp/>}/>
+      </Routes>
+    </AdsProvider>
+
+
+
   );
 }
 
