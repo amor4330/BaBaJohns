@@ -3,7 +3,7 @@ import PopupDom from './PopupDom';
 import PopupPostCode from './PopupPostCode';
 
 import './delivery.css';
-import UserContext from './UserContext';
+import UserContext from '../context/UserContext';
 
 const Delivery2 = () => {
 

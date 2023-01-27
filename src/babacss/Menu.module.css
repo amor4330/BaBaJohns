@@ -5,14 +5,6 @@
     box-sizing: border-box;
 }
 /* 메뉴고르는 전체 틀 */
-
-.detail_main_wrap{
-    display: flex;
-    padding:5rem;
-    border-bottom:0.5rem solid #f3f8f9;
-}
-
-
 .mainselect{
     display: flex;
     flex-flow: row nowrap;
@@ -20,18 +12,16 @@
     align-items: center;
 }
 
-/* 테스트용. 지울 것 */
-.board{
-    border:1px solid #777; 
-}
-.boardTest{
-    border:1px solid #777; 
-    width: 640px;
-    height: 402px;
+.detail_main_wrap{
+    padding:5rem;
+    border-bottom:0.5rem solid #f3f8f9;
+
 }
 
+
+
 /* 왼쪽 */
-/* 이미지 조절하기. 수정필요 */
+/* 이미지 조절하기.*/
 .leftImgBlock{
     display: flex;
     align-items: center;
@@ -48,9 +38,7 @@
   float: right;
 }
 
-.detailNotice{
-    float: left;
-}
+
 
 /* 상기 이미지는 실제 제품과 다를 수 있습니다 */
 .detailNotice{
@@ -68,10 +56,10 @@
 
 /* 오른쪽 */
 
-
 .rightSelect{
     padding: 45px;
     padding-top: 10px;
+    margin-top: 50px;
     border-radius: 1.6rem;
     border: 1px solid #ebebeb;
     overflow: hidden;
@@ -101,7 +89,7 @@
 }
 
 .rightwrap2{
-    padding-top: 10px;
+    margin-top: 1px;
 }
 
 /* 도우고르기 */
@@ -119,6 +107,7 @@
 
 .custom_radio{
     display: inline-block;
+    margin-right: 20px;
     position: relative;
     cursor: pointer;
 }
@@ -142,16 +131,46 @@
     display: none;
 }
 
-.img_wrap.test > .off {
+.img_wrap.choosed > .off {
     display: none;
 }
 
 
-.img_wrap.test > .on{
+.img_wrap.choosed > .on{
     display: block;
 }
 
 
+/* 사이즈고르기 */
+:root{/* 라디오박스 버튼색변경 */
+    accent-color: red;
+}
+
+.detail_halfnhalf_size_wrap{
+    margin:10px;
+    margin-left: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.custom_radio2{
+    overflow: hidden;
+}
+
+.custom_radio2 >input{
+    margin-top: 5px;
+    float: left;
+}
+
+.size_info{
+    float: left;
+    margin-left: 8px;
+}
+
+.custom_radio2 .size_info small{
+    font-weight: 500;
+    color: rgb(182, 177, 177);
+}
 
 
 /* 피자고르기 */
@@ -160,6 +179,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    margin-bottom:10px;
 }
 
 .selector{
@@ -180,4 +200,11 @@
     display: block;
     font-size: 14px;
     font-weight: bolder;
+}
+
+/* 가격 */
+.fixed_payment_wrap{
+    position: fixed;
+    background-color: red;
+    height: 100px;
 }
