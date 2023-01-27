@@ -107,7 +107,7 @@ const PickUp = () => {
                   </div>
 
                   <KakaoMap/>
-d
+
                </div>
 
             </div> {/* map div */}
