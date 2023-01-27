@@ -1,6 +1,6 @@
 import DaumPostcode from "react-daum-postcode";
-import UserContext from './UserContext';
 import {useContext}  from "react";
+import UserContext from "../context/UserContext";
 
 const PopupPostCode = (props) => {
   const {address, action} = useContext(UserContext);

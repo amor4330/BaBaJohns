@@ -1,9 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
 import PopupDom from './PopupDom';
 import PopupPostCode from './PopupPostCode';
-
 import './delivery.css';
-import UserContext from './UserContext';
+import UserContext from '../context/UserContext';
 
 const Delivery2 = () => {
 
@@ -21,12 +20,12 @@ const Delivery2 = () => {
     }
 
     const {...total} = useContext(UserContext);
-
+    
     //이거 이벤트핸들러에서 활용하면 됩니다
     // useEffect(()=> {
     //     total.action.setDelAddr("test");
     // }, [total.delAddr])
-    
+
     return (
         <>
             <div className="search">

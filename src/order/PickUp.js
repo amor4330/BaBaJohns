@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
+import UserContext from "../context/UserContext";
 import KakaoMap from "./KakaoMap";
+import puStyle from "./PickUp.module.css";
 
 const {kakao} = window;
 
 const PickUp = () => {
-
+   
    const branchList = [
       {id: "gangnam0", branch: "개포점", tel: "02-572-4894", add: "서울특별시 강남구 개포동(개포4동) 1229-12", open:"11:00 ~ 21:30", type: "배달 + 포장 + 미니레스토랑", parking: "주차 가능"},
       {id: "gangnam1", branch: "논현점", tel: "02-511-8757", add: "서울특별시 강남구 학동로 328 1층", open:"11:00 ~ 21:30", type: "배달 + 포장", parking: "주차 가능"},
@@ -17,17 +19,17 @@ const PickUp = () => {
       {id: "gangnam8", branch: "청담점", tel: "02-546-8763", add: "서울특별시 강남구 삼성동(삼성1동) 53-2", open:"11:00 ~ 21:30", type: "배달 + 포장", parking: "주차 불가"}
    ]
    
-   const [selectBranch, setSelectBranch] = useState({id: "gangnam0", branch: "개포점", tel: "02-572-4894", add: "서울특별시 강남구 개포동(개포4동) 1229-12", open:"11:00 ~ 21:30", type: "배달 + 포장 + 미니레스토랑", parking: "주차 가능"
-   })
-
-   const handelClick = (e) => {
-   }
+   const {...total} = useContext(UserContext);
+   
+   useEffect(()=>{
+   },[total.puInfo])
 
    const handleChange = (e) => {
       const selectedBranch = branchList.filter((item) => {
          return item.id === e.target.id;
       })
-      setSelectBranch(selectedBranch[0]);
+      // setSelectBranch(selectedBranch[0]);
+      total.action.setPuInfo(selectedBranch[0]);
    }
    
 
@@ -36,13 +38,13 @@ const PickUp = () => {
    
    const makeList = branchList.map((item, index) => 
 
-      <li>
+      <li className={puStyle.list_container}>
          <label htmlFor={item.id}>
             {/* radio */}
-            <input type="radio" name="local_address" id={item.id} onChange={handleChange}/>
+            <input type="radio" name="local_address" id={item.id} className={puStyle.list_input} onChange={handleChange}/>
 
             {/* a태그 */}
-            <a id={item.id} onClick={handelClick}>
+            <div id={item.id} className={puStyle.list_a}>
                <div className={item.id}>
                   <div>
                      <span className={item.id}>{item.branch}</span>
@@ -50,7 +52,7 @@ const PickUp = () => {
                   </div>
                   <div className={item.id}>{item.add}</div>
                </div>
-            </a>
+            </div>
          </label>
       </li>
    )
@@ -63,47 +65,49 @@ const PickUp = () => {
    return (
       <div>
 
-         <div className="container"> {/* 리스트, 맵을 담는 컨테이너 */}
+         <div className={puStyle.container}> {/* 리스트, 맵을 담는 컨테이너 */}
             
             {/* 매장 리스트 */}
-            <div>
+            <div className = {puStyle.left}>
                <h3>매장 목록</h3>
-               <ul>
-                  {makeList}
-               </ul>
+               <div className = {puStyle.list}>
+                  <ul>
+                     {makeList}
+                  </ul>
+               </div>
             </div> {/* list div */}
 
 
 
             {/* 지도 API */}
-            <div>
+            <div className={puStyle.left}>
                <h3>매장 정보</h3>
 
                <div>
 
                   <div>
-                     <div className = "branch_name">
+                     <div className = {puStyle.branch_name}>
                         <span>매장명: </span>
-                        <span>{selectBranch.branch}</span>
+                        <span>{total.puInfo.branch}</span>
                      </div>
                      <ul>
                         <li>
                            <span>영업시간</span>
-                           <span>{selectBranch.open}</span>
+                           <span>{total.puInfo.open}</span>
                         </li>
                         <li>
                            <span>매장타입</span>
-                           <span>{selectBranch.type}</span>
+                           <span>{total.puInfo.type}</span>
                         </li>
                         <li>
                            <span>주차여부</span>
-                           <span>{selectBranch.parking}</span>
+                           <span>{total.puInfo.parking}</span>
                         </li>
                      </ul>
                   </div>
 
-                  <KakaoMap branch = {selectBranch}/>
-
+                  <KakaoMap/>
+d
                </div>
 
             </div> {/* map div */}
