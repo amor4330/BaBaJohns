@@ -1,11 +1,11 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import Home from './Home';
 import Delivery from './order/delivery';
 import PickUp from './order/PickUp';
 import Menu from './halfandhalf/menu';
 import {BabaProvider } from './context/UserContext';
 import Payment from './payment/Payment';
+import Home from './Home/Home';
 
 
 function App() {
