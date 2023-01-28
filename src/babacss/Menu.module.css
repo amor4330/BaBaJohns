@@ -210,7 +210,7 @@
 
 /* 수량 */
 .detail_halfnhalf_num_count_wrap{
-    padding: 1rem 0 0;
+    padding: 2rem 0 0;
     margin-right: 30px;
     text-align: right;
     border-bottom:0.5rem solid #f3f8f9;
@@ -239,10 +239,9 @@
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
     border: 1px solid #ebebeb;
-    font-size: 60px;
-    line-height: 85px;
-    
+    font-weight: bold;
 }
+
 
 .btnR{
     cursor: pointer;
@@ -252,9 +251,11 @@
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
     border: 1px solid #ebebeb;
-    line-height: 50px;
-    font-size: 50px;
+    font-weight: bold;
+    font-size: 27px;
 }
+
+
 
 .num_count_value{
     width: 9rem;

@@ -276,7 +276,7 @@ const Menu = () => {
                   <div className={menuCss.detail_halfnhalf_num_count_wrap}>
                      <div className={menuCss.num_count_box}>
                         <div className={menuCss.num_count_wrap_main}>
-                           <button className={`${menuCss.btnL} ${menuCss.btn_down}`} id="btnDownpizza" name="down" onClick={countButton} >‾</button>
+                           <button className={`${menuCss.btnL} ${menuCss.btn_down}`} id="btnDownpizza" name="down" onClick={countButton} >―</button>
                            <input type="text" className={menuCss.num_count_value} readOnly value={count} />
                            <button className={`${menuCss.btnR} ${menuCss.btn_up}`} id="btnUppizza" name="up" onClick={countButton} >+</button>
                         </div>
