@@ -1,9 +1,15 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import home from './Home.module.css';
+import Modal from "../modal/Modal";
 
 const Home = () => {
+
+    const [openModal, setOpenModal] = useState(false);
+    const [modalState, setModalState] = useState('');
     return (
         <body>
+            {openModal && <Modal closeModal={setOpenModal} value={modalState}/>}
             <div className={home.wrap}>
                 <div className={home.content_box}>
                     <section className={home.main_slide_wrap}>
@@ -24,10 +30,11 @@ const Home = () => {
                         <span id="setAddress">기본 주소를 등록해주세요.</span>
                     </section>
                     <section className={home.main_order_wrap}>
-                        <button className={home.btn_order} onclick="">
+                        
+                        <button className={`${home.btn_order} ${home.openModalBtn}`} name="btn_del" onClick={() => { setOpenModal(true); setModalState('btn_del');}}>
                             <img src="https://imgcdn.pji.co.kr/pc/img/btn_delivery.png" alt="메인배달주문" />
                         </button>
-                        <button className={home.btn_order} onclick="">
+                        <button className={`${home.btn_order} ${home.openModalBtn}`}  name="btn_pu" onClick={() => { setOpenModal(true); setModalState('btn_pu');}}>
                             <img src="https://imgcdn.pji.co.kr/pc/img/btn_wrapping.png" alt=" 메인포장주문" />
                         </button>
                     </section>

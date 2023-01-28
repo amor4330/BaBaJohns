@@ -19,8 +19,13 @@ const Delivery2 = () => {
         setIsPopupOpen(false);
     }
 
+    
     const {...total} = useContext(UserContext);
     
+    const handleChange = (e) => {
+        total.action.setDelAddr(total.delAddr, total.delAddr.detailAddr = e.target.value )
+        console.log(e.target.value)
+    }
     //이거 이벤트핸들러에서 활용하면 됩니다
     // useEffect(()=> {
     //     total.action.setDelAddr("test");
@@ -45,8 +50,8 @@ const Delivery2 = () => {
 
             <div className={delivery.input_container}>
                 <p className={delivery.address}>배달 가능 매장 : </p>
-                <input type="text" className={delivery.address} placeholder="기본 주소" value = {total.delAddr}/><br />
-                <input type="text" className={delivery.address} placeholder="상세 주소" />
+                <input type="text" className={delivery.address} placeholder="기본 주소" value = {total.delAddr.basicAddr}/>
+                <input type="text" className={delivery.address} placeholder="상세 주소" onChange = {handleChange} value = {total.delAddr.detailAddr}/>
             </div>
 
         </>

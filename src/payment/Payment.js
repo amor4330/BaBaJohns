@@ -94,59 +94,59 @@ const Payment = () => {
             <section style={{marginTop:"120px"}}>
                 <h2 style={{ textAlign: 'center', marginBottom: '10px' }}>주문 결제</h2>
                 <p style={{ textAlign: 'center', marginBottom: '30px' }}>수령정보</p>
-
-                <center>
-                    <img src="https://imgcdn.pji.co.kr/pc/img/order_step_1_off.png" alt="장바구니"></img>
-                    <img src="https://imgcdn.pji.co.kr/pc/img/order_step_2_on.png" alt="주문결제"></img>
-                    <img src="https://imgcdn.pji.co.kr/pc/img/order_step_3_off.png" alt="주문완료"></img>
-                </center>
-                <center>
-                    <table>
-                        <thead >
-                            <tr>
-                                <td className={Pm.table_head}>수령정보</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr className={Pm.table_top}>
-                                <td className={`${Pm.table} ${Pm.table_rigth}`}>수령인: 강민정</td>
-                                <td className={Pm.table}>전화번호:  010-1234-5678</td>
-                            </tr>
-                            <tr className={Pm.table_top}>
-                                <td className={`${Pm.table} ${Pm.table_rigth}`}>수령 주소: {total.delAddr}</td>
-                                <td className={Pm.table}>매장: {total.puInfo.branch} </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </center>
-                <section style={{ width: "80%", margin: "0 auto" }}>
-                    <div className={Pm.order_time_wrap}>
-                        <input type="radio" name="test" className={Pm.ordertime} defaultChecked /> 배달시간(40 ~ 50분 예상)
-                        <input type="radio" name="test" className={Pm.ordertime} /> 예약 주문
-                        <select className={Pm.ordertime}>
-                            <option>11시</option>
-                            <option>12시</option>
-                            <option>13시</option>
-                            <option>14시</option>
-                            <option>15시</option>
-                            <option>16시</option>
-                            <option>17시</option>
-                            <option>18시</option>
-                            <option>19시</option>
-                            <option>20시</option>
-                            <option>21시</option>
-                        </select>
-                        <select>
-                            <option>00분</option>
-                            <option>10분</option>
-                            <option>20분</option>
-                            <option>30분</option>
-                            <option>40분</option>
-                            <option>50분</option>
-                        </select>
-                        <br />
-                        <span>※ 고객님께 최고의 품질 및 서비스를 제공해 드리기 위해 당일 예약주문이 불가하니 양해바랍니다.</span>
-                    </div>
+            <center>
+                <img src="https://imgcdn.pji.co.kr/pc/img/order_step_1_off.png" alt="장바구니"></img>
+                <img src="https://imgcdn.pji.co.kr/pc/img/order_step_2_on.png" alt="주문결제"></img>
+                <img src="https://imgcdn.pji.co.kr/pc/img/order_step_3_off.png" alt="주문완료"></img>
+            </center>
+            <center>
+                <table>
+                    <thead >
+                        <tr>
+                            <td className={Pm.table_head}>수령정보</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr className={Pm.table_top}>
+                            <td className={`${Pm.table} ${Pm.table_rigth}`}>수령인: 강민정</td>
+                            <td className={Pm.table}>전화번호:  010-1234-5678</td>
+                        </tr>
+                        <tr className={Pm.table_top}>
+                            <td className={`${Pm.table} ${Pm.table_rigth}`}>수령 주소: {total.delAddr.basicAddr}<br/>
+                            <span style={{marginLeft:"68px"}}>{total.delAddr.detailAddr}</span></td>
+                            <td className={Pm.table}>매장: {total.puInfo.branch} </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </center>
+            <section style={{width:"80%", margin:"0 auto"}}>
+                <div className={Pm.order_time_wrap}>
+                    <input type="radio" name="test" className={Pm.ordertime} defaultChecked /> 배달시간(40 ~ 50분 예상)
+                    <input type="radio" name="test" className={Pm.ordertime} /> 예약 주문
+                    <select className={Pm.ordertime}>
+                        <option>11시</option>
+                        <option>12시</option>
+                        <option>13시</option>
+                        <option>14시</option>
+                        <option>15시</option>
+                        <option>16시</option>
+                        <option>17시</option>
+                        <option>18시</option>
+                        <option>19시</option>
+                        <option>20시</option>
+                        <option>21시</option>
+                    </select>
+                    <select>
+                        <option>00분</option>
+                        <option>10분</option>
+                        <option>20분</option>
+                        <option>30분</option>
+                        <option>40분</option>
+                        <option>50분</option>
+                    </select>
+                    <br />
+                    <span>※ 고객님께 최고의 품질 및 서비스를 제공해 드리기 위해 당일 예약주문이 불가하니 양해바랍니다.</span>
+                </div>
 
                     <h2 style={{ textAlign: 'center', paddingTop: '50px' }}>주문 상품</h2>
                     <div className={Pm.result}>

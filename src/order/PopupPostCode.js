@@ -22,7 +22,7 @@ const PopupPostCode = (props) => {
         extraAddress += (extraAddress !== '' ? `, ${data.buildingName}` : data.buildingName);
       }
       fullAddress += (extraAddress !== '' ? ` (${extraAddress})` : '');
-      total.action.setDelAddr(fullAddress);
+      total.action.setDelAddr({basicAddr : fullAddress});
     }
 
     // console.log(data)
