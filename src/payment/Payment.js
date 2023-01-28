@@ -91,9 +91,9 @@ const Payment = () => {
 
     return (
         <Fragment>
-            <h2 style={{ textAlign: 'center', marginBottom: '10px' }}>주문 결제</h2>
-            <p style={{ textAlign: 'center', marginBottom: '30px' }}>수령정보</p>
-
+            <section style={{marginTop:"120px"}}>
+                <h2 style={{ textAlign: 'center', marginBottom: '10px' }}>주문 결제</h2>
+                <p style={{ textAlign: 'center', marginBottom: '30px' }}>수령정보</p>
             <center>
                 <img src="https://imgcdn.pji.co.kr/pc/img/order_step_1_off.png" alt="장바구니"></img>
                 <img src="https://imgcdn.pji.co.kr/pc/img/order_step_2_on.png" alt="주문결제"></img>
@@ -148,24 +148,25 @@ const Payment = () => {
                     <span>※ 고객님께 최고의 품질 및 서비스를 제공해 드리기 위해 당일 예약주문이 불가하니 양해바랍니다.</span>
                 </div>
 
-                <h2 style={{ textAlign: 'center', paddingTop: '50px' }}>주문 상품</h2>
-                <div className={Pm.result}>
-                    <img src={`https://imgcdn.pji.co.kr/pc/img/menu/halfL/${total.menuInfo.pizzaL}_${total.menuInfo.dough}.png`} alt="왼쪽피자" />
-                    <img src={`https://imgcdn.pji.co.kr/pc/img/menu/halfR/${total.menuInfo.pizzaR}_${total.menuInfo.dough}.png`} alt="오른쪽피자" /><br />
-                </div>
-                <div style={{ textAlign: 'center', borderBottom: '1px solid black', paddingBottom: '10px' }}>
-                    <span>{orderdPizzaInfo}</span>
-                    <span> X {total.menuInfo.count}</span>
-                    <div className={Pm.size_box}><span>{result4}</span></div>
-                    <div>
-                        <span>{[totalPrice].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원</span>
+                    <h2 style={{ textAlign: 'center', paddingTop: '50px' }}>주문 상품</h2>
+                    <div className={Pm.result}>
+                        <img src={`https://imgcdn.pji.co.kr/pc/img/menu/halfL/${total.menuInfo.pizzaL}_${total.menuInfo.dough}.png`} alt="왼쪽피자" />
+                        <img src={`https://imgcdn.pji.co.kr/pc/img/menu/halfR/${total.menuInfo.pizzaR}_${total.menuInfo.dough}.png`} alt="오른쪽피자" /><br />
                     </div>
-                </div>
+                    <div style={{ textAlign: 'center', borderBottom: '1px solid black', paddingBottom: '10px' }}>
+                        <span>{orderdPizzaInfo}</span>
+                        <span> X {total.menuInfo.count}</span>
+                        <div className={Pm.size_box}><span>{result4}</span></div>
+                        <div>
+                            <span>{[totalPrice].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원</span>
+                        </div>
+                    </div>
 
-                <div className={Pm.resultbtn}>
-                    <button type="button" className={Pm.resultbtn}>메뉴 추가</button>
-                    <button type="button" className={Pm.resultbtn}>주문 하기</button>
-                </div>
+                    <div className={Pm.resultbtn}>
+                        <button type="button" className={Pm.resultbtn}>메뉴 추가</button>
+                        <button type="button" className={Pm.resultbtn}>주문 하기</button>
+                    </div>
+                </section>
             </section>
         </Fragment>
 
