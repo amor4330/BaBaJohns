@@ -1,12 +1,40 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
+
+/* 주문정보 */
 .table_top {
-    margin: 0 auto; 
+    margin: 0 auto;
 }
 
 .table {
+    border-top: 1px solid #ebebeb;
     width: 500px;
     height: 100px;
     margin: auto;
+}
+
+.table_head {
+    padding: 20px 0 20px 0;
+    font-size: large;
+}
+
+.table_rigth {
+    border-right: 1px solid #ebebeb;
+}
+
+
+/* 주문시간 */
+
+.order_time_wrap {
+    border-top: 2px solid #777;
+    text-align: center;
+    margin: 20px;
+    border-bottom: 2px solid #777;
+    padding-bottom: 40px;
 }
 
 .ordertime {
@@ -23,16 +51,11 @@
     margin: 10px;
 }
 
-/* img {
-    width: 200px;
-    height: 300px;
-} */
-
 .price {
     float: right;
     display: flex;
     align-items: center;
-    
+
 }
 
 .resultbtn {
@@ -42,4 +65,14 @@
     border-radius: 30px;
     margin-left: 15px;
     margin-right: 15px;
+}
+
+/* 사이즈박스 */
+.size_box{
+    display: inline-block;
+    border: 3px solid red;
+    border-radius: 1.2rem;
+    color:red;
+    padding: 5px;
+    margin-left: 15px;
 }
