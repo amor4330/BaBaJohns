@@ -48,7 +48,7 @@ const KakaoMap = ({branch}) => {
       
    })
 
-   return <div id="map" style={{width:"100%", height:"350px"}}></div>
+   return <div id="map" style={{width:"350px", height:"245px"}}></div>
 
 }
 

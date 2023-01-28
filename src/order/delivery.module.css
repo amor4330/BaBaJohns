@@ -1,27 +1,33 @@
 
+.input_container {
+    float:left;
+    display: block;
+    width: 500px;
+    margin: 0 auto;
+    margin-left: 10px;
+}
+
 .address {
-    width: 400px;
+    box-sizing: border-box;
+    width: 630px;
     height: 30px;
     padding: 10px;
-    padding-top: 10px;
-    margin: 10px;
+    margin-top: 10px;
 }
 
 .search {
     text-align: center;
-    padding: 20px;
-    padding-top: 30px ;
-    margin: 10px;
 }
 
 .popupDom {
     position: absolute;
+    bottom:21%;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .regist {
-    width: 80px;
+    width: 10px;
     height: 40px;
     border-radius: 20px;
     padding: 10px;

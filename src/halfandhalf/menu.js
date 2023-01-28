@@ -1,8 +1,11 @@
-import { Fragment, useRef, useState } from "react";
+import { Fragment, useContext, useRef, useState } from "react";
+import { useNavigate } from "react-router";
+import UserContext from "../context/UserContext";
 import menuCss from './../babacss/Menu.module.css';
 
 
 const Menu = () => {
+
 
    const leftImgPizza = useRef(null);
    const rigthImgPizza = useRef(null);
@@ -89,8 +92,8 @@ const Menu = () => {
    }
 
    // 피자바꾸기
-   const [pizzaL, setPizzaL] = useState(`1000`);
-   const [pizzaR, setPizzaR] = useState(`1000`);
+   const [pizzaL, setPizzaL] = useState(`1002`);
+   const [pizzaR, setPizzaR] = useState(`1002`);
    const handleChange = (e) => {
       if (e.target.name === "lefthalf") {
          setPizzaL(e.target.value);
@@ -118,9 +121,23 @@ const Menu = () => {
       }
    }
 
+   //넘어가기
+   const navigate=useNavigate();
+
+   const navigateToPayment=()=>{
+      navigate("/payment");
+   }
+   
+   const {...total}=useContext(UserContext);
+   const toOrderClick=()=>{
+      total.action.setMenuInfo({dough:dough,size:size,pizzaL:pizzaL,pizzaR:pizzaR,count:count});
+      total.action.setPrice(orderPrice);
+      navigateToPayment();
+   } 
+
    return (
       <Fragment>
-         <section>
+         <section className={menuCss.all_content}>
             <div className={menuCss.mainselect}>
                <div className={menuCss.detail_main_wrap}>
                   <div className={menuCss.left}>
@@ -137,7 +154,7 @@ const Menu = () => {
                      </div>
                   </div>
                </div>
-               <div className={menuCss.detail_main_wrap}>
+               <div className={menuCss.detail_main_wrap2}>
                   <div className={menuCss.right}>
                      <div className={menuCss.rightSelect}>
                         <div className={menuCss.rightwrap}>
@@ -152,7 +169,6 @@ const Menu = () => {
                               <li>
                                  <label className={menuCss.custom_radio}>
                                     <input type="radio" name="dough" value="10" onChange={doughClick} />
-                                    {/* <div className="img_wrap {dough === '10' ? `choosed` : ``}"> */}
                                     <div className={`${menuCss.img_wrap} ${dough === '10' ? menuCss.choosed : ''}`}>
                                        <img src="https://imgcdn.pji.co.kr/pc/img/dough_10_off.png" alt="오리지날 도우 배너" className={`${menuCss.icon} ${menuCss.off}`} />
                                        <img src="https://imgcdn.pji.co.kr/pc/img/dough_10_on.png" alt="오리지날 도우 배너" className={`${menuCss.icon} ${menuCss.on}`} />
@@ -278,7 +294,7 @@ const Menu = () => {
                      <span className={menuCss.price}>원</span>
                   </div>
                   <div className={menuCss.btn_wrap}>
-                     <button className={menuCss.ntm_payment}><img src="https://imgcdn.pji.co.kr/pc/img/icon_detail_payment_old.png" className={menuCss.buttonIcon} alt="주문하기 아이콘" />주문하기</button>
+                     <button className={menuCss.ntm_payment} onClick={toOrderClick}><img src="https://imgcdn.pji.co.kr/pc/img/icon_detail_payment_old.png" className={menuCss.buttonIcon} alt="주문하기 아이콘" />주문하기</button>
                   </div>
                </div>
             </div>

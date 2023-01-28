@@ -7,20 +7,28 @@
    width: 100%;
 }
 
+.main {
+   min-height: 500px;
+}
 
 .container .left {
    width: 500px;
-   height: 400px;
+   height: 330px;
+   margin: 15px 0;
 }
 .container .left .list {
-   height: 400px;
+   height: 330px;
    overflow-y: scroll;
 }
 
-
+.branchList {
+   padding-left: 57px;
+}
+.branchInfo {
+   padding-left: 15 px;
+}
 
 .list_container{
-   overflow: hidden;
    box-sizing: border-box;
 }
 
@@ -31,7 +39,7 @@
 .list_container .list_a {
    margin: 0;
    width: 95%;
-   margin-left:10px;
+   margin-left:0px;
    margin-bottom: 10px;
    float: left;
 }
@@ -39,4 +47,15 @@
 .list_container .list_a:hover{
    background: rgba(0, 0, 0, 0.3);
    transition: all 0.5s;
+}
+
+.list {
+   height: 50px;
+}
+.branInfo div span {
+   padding: 0 5px;
+}
+
+.branInfo ul li span {
+   padding: 0 5px;
 }

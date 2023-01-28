@@ -33,20 +33,30 @@ const PopupPostCode = (props) => {
   }
 
   const postCodeStyle = {
+    border: "2px solid black",
     display: "block",
     top: "10%",
-    width: "600px",
-    height: "600px",
-    padding: "10px",
+    width: "550px",
+    height: "400px"
   };
 
   return (
     <div>
       
-      <DaumPostcode style={postCodeStyle} onComplete={HandlePostCode} />
+      <DaumPostcode style={postCodeStyle} onComplete={HandlePostCode}>
+      </DaumPostcode>
 
-      <div>{props.data}</div>
-      {<button type='button' onClick={() => { props.onClose() }} className='postCode_btn'>　X　</button>}<br/>
+      <button type='button' onClick={() => { props.onClose() }} className='postCode_btn' style={{backgroundColor: "gray",
+        color: "white",
+        border: "none",
+        padding: "5px 0px",
+        fontSize: "15px",
+        position: "absolute",
+        bottom: "0px",
+        right: "0px",
+        zIndex: "1000",
+        cursor: "pointer"
+        }}>　X　</button>
 
     </div>
   )
