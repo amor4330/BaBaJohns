@@ -63,15 +63,15 @@ const PickUp = () => {
    }, [])
 
    return (
-      <div>
+      <div className = {puStyle.main}>
 
          <div className={puStyle.container}> {/* 리스트, 맵을 담는 컨테이너 */}
             
             {/* 매장 리스트 */}
-            <div className = {puStyle.left}>
+            <div className = {`${puStyle.left} ${puStyle.branchList}`}>
                <h3>매장 목록</h3>
                <div className = {puStyle.list}>
-                  <ul>
+                  <ul className="list_ul">
                      {makeList}
                   </ul>
                </div>
@@ -80,27 +80,27 @@ const PickUp = () => {
 
 
             {/* 지도 API */}
-            <div className={puStyle.left}>
+            <div className={`${puStyle.left} ${puStyle.branchInfo}`}>
                <h3>매장 정보</h3>
 
                <div>
 
-                  <div>
+                  <div className={puStyle.branInfo}>
                      <div className = {puStyle.branch_name}>
-                        <span>매장명: </span>
+                        <b>매장명 </b>
                         <span>{total.puInfo.branch}</span>
                      </div>
                      <ul>
                         <li>
-                           <span>영업시간</span>
+                           <b>영업시간</b>
                            <span>{total.puInfo.open}</span>
                         </li>
                         <li>
-                           <span>매장타입</span>
+                           <b>매장타입</b>
                            <span>{total.puInfo.type}</span>
                         </li>
                         <li>
-                           <span>주차여부</span>
+                           <b>주차여부</b>
                            <span>{total.puInfo.parking}</span>
                         </li>
                      </ul>

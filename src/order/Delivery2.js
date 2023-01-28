@@ -29,8 +29,10 @@ const Delivery2 = () => {
     return (
         <>
             <div className={delivery.search}>
-                <h3>배달 주소 검색</h3><br/>
-                <button type="button" onClick={openPostCode} className={delivery.regist}>검색</button>
+                <div>
+                    <button type="button" onClick={openPostCode} className = "add_btn">주소검색</button>
+
+                </div>
 
                 <div id='popupDom' className={delivery.popupDom}>
                     {isPopupOpen && (
@@ -41,8 +43,8 @@ const Delivery2 = () => {
                 </div>
             </div>
 
-            <div>
-                <p>배달 가능 매장 : </p>
+            <div className={delivery.input_container}>
+                <p className={delivery.address}>배달 가능 매장 : </p>
                 <input type="text" className={delivery.address} placeholder="기본 주소" value = {total.delAddr}/><br />
                 <input type="text" className={delivery.address} placeholder="상세 주소" />
             </div>
