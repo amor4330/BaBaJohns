@@ -4,7 +4,6 @@ import PickUp from './PickUp';
 
 //CSS파일 경로 링크
 import delivery from './delivery.module.css';
-import PickUp from './PickUp';
 
 const Delivery = () => {
 
