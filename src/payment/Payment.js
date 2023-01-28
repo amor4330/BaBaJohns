@@ -1,4 +1,4 @@
-import { Fragment, useContext, useState } from "react";
+import { Fragment, useContext } from "react";
 import UserContext from "../context/UserContext";
 import Pm from './Payment.module.css';
 
@@ -112,7 +112,8 @@ const Payment = () => {
                             <td className={Pm.table}>전화번호:  010-1234-5678</td>
                         </tr>
                         <tr className={Pm.table_top}>
-                            <td className={`${Pm.table} ${Pm.table_rigth}`}>수령 주소: {total.delAddr}</td>
+                            <td className={`${Pm.table} ${Pm.table_rigth}`}>수령 주소: {total.delAddr.basicAddr}<br/>
+                            <span style={{marginLeft:"68px"}}>{total.delAddr.detailAddr}</span></td>
                             <td className={Pm.table}>매장: {total.puInfo.branch} </td>
                         </tr>
                     </tbody>
