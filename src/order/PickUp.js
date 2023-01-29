@@ -30,6 +30,7 @@ const PickUp = () => {
       })
       // setSelectBranch(selectedBranch[0]);
       total.action.setPuInfo(selectedBranch[0]);
+      total.action.setCloseBranch({branch: selectedBranch[0].branch, addr: '포장'})
    }
    
 
