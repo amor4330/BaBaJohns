@@ -105,7 +105,6 @@ const Menu = () => {
    //수량바꾸기
    const [count, setCount] = useState(1);
    const countButton = (e) => {
-
       if (e.target.name === 'down') {
          if (count === 1) {
             setCount(count);
@@ -120,7 +119,6 @@ const Menu = () => {
          }
       }
    }
-
    //넘어가기
    const navigate=useNavigate();
 
@@ -277,7 +275,7 @@ const Menu = () => {
                      <div className={menuCss.num_count_box}>
                         <div className={menuCss.num_count_wrap_main}>
                            <button className={`${menuCss.btnL} ${menuCss.btn_down}`} id="btnDownpizza" name="down" onClick={countButton} >―</button>
-                           <input type="text" className={menuCss.num_count_value} readOnly value={count} />
+                           <input type="text" className={menuCss.num_count_value} readOnly value={count}/>
                            <button className={`${menuCss.btnR} ${menuCss.btn_up}`} id="btnUppizza" name="up" onClick={countButton} >+</button>
                         </div>
                      </div>
@@ -290,7 +288,7 @@ const Menu = () => {
                <div className={menuCss.fixed_payment_box}>
                   <div className={menuCss.txt_wrap}>
                      <div className={menuCss.label}>결재금액</div>
-                     <div className={menuCss.price}>{[orderPrice].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</div>
+                     <div className={menuCss.price}>{[orderPrice*count].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</div>
                      <span className={menuCss.price}>원</span>
                   </div>
                   <div className={menuCss.btn_wrap}>
