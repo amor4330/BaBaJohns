@@ -114,7 +114,7 @@ const Payment = () => {
                         <tr className={Pm.table_top}>
                             <td className={`${Pm.table} ${Pm.table_rigth}`}>수령 주소: {total.delAddr.basicAddr}<br/>
                             <span style={{marginLeft:"68px"}}>{total.delAddr.detailAddr}</span></td>
-                            <td className={Pm.table}>매장: {total.puInfo.branch} </td>
+                            <td className={Pm.table}>매장: {total.closeBranch.branch} </td>
                         </tr>
                     </tbody>
                 </table>
