@@ -16,11 +16,17 @@ const Modal = ({closeModal, value}) => {
       navigate("/menu");
    }
    const toMenuClick = () => {
-      if(total.delAddr.basicAddr.length <= 1){
-         alert("주소를 입력하세요.")
-         return;
+      
+      if(showModal === 'btn_del'){
+         if(total.delAddr.basicAddr.length <= 1){
+            alert("주소를 입력하세요.")
+            return;
+         }
+         navigateToMenu();
+      } else{
+         total.action.setDelAddr({basicAddr: '포장'})
+         navigateToMenu();
       }
-      navigateToMenu();
    }
 
    return (

@@ -5,10 +5,6 @@ import UserContext from "../context/UserContext";
 const PopupPostCode = (props) => {
   const { ...total } = useContext(UserContext);
 
-  //이거 이벤트핸들러에서 활용하면 됩니다
-  useEffect(() => {
-  }, [total.delAddr])
-
   // 우편번호 검색 후 주소 클릭 시 실행될 함수, data callback 용
   const HandlePostCode = (data) => {
     let fullAddress = data.address;
