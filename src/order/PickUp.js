@@ -47,8 +47,8 @@ const PickUp = () => {
             <div id={item.id} className={puStyle.list_a}>
                <div className={item.id}>
                   <div>
-                     <span className={item.id}>{item.branch}</span>
-                     <span className={item.id}>{item.tel}</span>
+                     <b className={item.branch}>{item.branch}</b>
+                     <small className={item.id}> {item.tel}</small>
                   </div>
                   <div className={item.id}>{item.add}</div>
                </div>
@@ -71,7 +71,7 @@ const PickUp = () => {
             <div className = {`${puStyle.left} ${puStyle.branchList}`}>
                <h3>매장 목록</h3>
                <div className = {puStyle.list}>
-                  <ul className="list_ul">
+                  <ul className={puStyle.list_ul}>
                      {makeList}
                   </ul>
                </div>
@@ -85,7 +85,7 @@ const PickUp = () => {
 
                <div>
 
-                  <div className={puStyle.branInfo}>
+                  <div className={`${puStyle.branInfo} ${puStyle}`}>
                      <div className = {puStyle.branch_name}>
                         <b>매장명 </b>
                         <span>{total.puInfo.branch}</span>

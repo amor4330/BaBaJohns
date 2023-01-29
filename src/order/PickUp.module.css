@@ -52,10 +52,23 @@
 .list {
    height: 50px;
 }
+.list_ul {
+   padding: 0;
+}
+.list ul li {
+   padding: 0px;
+}
+
 .branInfo div span {
    padding: 0 5px;
 }
 
 .branInfo ul li span {
    padding: 0 5px;
+}
+.branchInfo ul {
+   padding: 0;
+}
+.listBranch {
+   font-weight: 500;
 }

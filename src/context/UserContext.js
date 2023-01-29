@@ -11,17 +11,20 @@ const BabaProvider = ({children}) => {
     });
     const [menuInfo, setMenuInfo] = useState();
     const [price, setPrice] = useState();
+    const [closeBranch, setCloseBranch] = useState({branch: '', addr: '서울특별시 강남구 개포동(개포4동) 1229-12'});
 
     const value = {
         delAddr : delAddr,
         puInfo : puInfo,
         menuInfo : menuInfo,
         price : price,
+        closeBranch : closeBranch,
         action : {
             setDelAddr,
             setPuInfo,
             setMenuInfo,
-            setPrice
+            setPrice,
+            setCloseBranch
         }
     }
 

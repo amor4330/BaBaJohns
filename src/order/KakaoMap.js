@@ -3,7 +3,7 @@ import UserContext from "../context/UserContext";
 
 const { kakao } = window;
 
-const KakaoMap = ({branch}) => {
+const KakaoMap = () => {
 
    const {...total} = useContext(UserContext);
 
