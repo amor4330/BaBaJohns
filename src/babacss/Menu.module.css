@@ -1,52 +1,54 @@
-*{
+* {
     padding: 0;
     margin: 0;
     list-style: none;
     box-sizing: border-box;
 }
 
-.all_content{
-    width: 60%;
-    margin: 0 auto;
+.all_content {
+    border-bottom: 0.5rem solid #f3f8f9;
 }
 
 /* 메뉴고르는 전체 틀 */
-.mainselect{
+.mainselect {
+    width: 60%;
+    margin: 0 auto;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
+    
 }
 
-.detail_main_wrap{
-    padding:4.6rem;
-    border-bottom:0.5rem solid #f3f8f9;
+.detail_main_wrap {
+    padding: 4.6rem;
 }
 
 
 
 /* 왼쪽 */
 /* 이미지 조절하기.*/
-.leftImgBlock{
+.leftImgBlock {
     display: flex;
     align-items: center;
     border-radius: 1.6rem;
     border: 1px solid #ebebeb;
     overflow: hidden;
+    width: 634px;
 }
 
-.leftImg{
-   float:left;
+.leftImg {
+    float: left;
 }
 
-.rightImg{
-  float: right;
+.rightImg {
+    float: right;
 }
 
 
 
 /* 상기 이미지는 실제 제품과 다를 수 있습니다 */
-.detailNotice{
+.detailNotice {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,17 +56,18 @@
     padding-bottom: 0;
 }
 
-.detailNotice>span{
+.detailNotice>span {
     font-size: 15px;
     color: #c8c8c8;
 }
 
 /* 오른쪽 */
 
-.detail_main_wrap2{
-    padding:5rem;
+.detail_main_wrap2 {
+    padding: 5rem;
 }
-.rightSelect{
+
+.rightSelect {
     padding: 45px;
     padding-top: 10px;
     margin-top: 50px;
@@ -75,18 +78,18 @@
 }
 
 
-.rightwrap{
+.rightwrap {
     padding-top: 10px;
     overflow: hidden;
 }
 
-.leftMenuShow{
+.leftMenuShow {
     float: left;
 }
 
-.rightMenuShow{
+.rightMenuShow {
     float: right;
-    border:2px solid red;
+    border: 2px solid red;
     border-radius: 20px;
     padding: 7px;
     color: red;
@@ -94,101 +97,104 @@
     font-weight: bolder;
 }
 
-.rightwrap2{
+.rightwrap2 {
     margin-top: 1px;
 }
 
 /* 도우고르기 */
-.selectDough{
+.selectDough {
     padding-top: 20px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.detail_halfnhalf_dough_wrap{
+.detail_halfnhalf_dough_wrap {
     display: flex;
     align-items: center;
+    padding-inline-start: 0px;
 }
 
-.custom_radio{
+.custom_radio {
     display: inline-block;
     margin-right: 20px;
     position: relative;
     cursor: pointer;
 }
 
-.custom_radio input{
+.custom_radio input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
 }
 
-.icon{
+.icon {
     height: 6rem;
 }
 
 
-.off{
+.off {
     display: block;
 }
 
-.on{
+.on {
     display: none;
 }
 
-.img_wrap.choosed > .off {
+.img_wrap.choosed>.off {
     display: none;
 }
 
 
-.img_wrap.choosed > .on{
+.img_wrap.choosed>.on {
     display: block;
 }
 
 
 /* 사이즈고르기 */
-:root{/* 라디오박스 버튼색변경 */
+:root {
+    /* 라디오박스 버튼색변경 */
     accent-color: red;
 }
 
-.detail_halfnhalf_size_wrap{
-    margin:10px;
+.detail_halfnhalf_size_wrap {
+    margin: 10px;
     margin-left: 0;
     display: flex;
     justify-content: space-between;
+    padding-inline-start: 0px;
 }
 
-.custom_radio2{
+.custom_radio2 {
     overflow: hidden;
 }
 
-.custom_radio2 >input{
+.custom_radio2>input {
     margin-top: 5px;
     float: left;
 }
 
-.size_info{
+.size_info {
     float: left;
     margin-left: 8px;
 }
 
-.custom_radio2 .size_info small{
+.custom_radio2 .size_info small {
     font-weight: 500;
     color: rgb(182, 177, 177);
 }
 
 
 /* 피자고르기 */
-.selectPizza{
+.selectPizza {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    margin-bottom:10px;
+    margin-bottom: 10px;
 }
 
-.selector{
+.selector {
     display: flex;
     align-items: center;
     width: 100%;
@@ -202,26 +208,25 @@
 
 
 /* 하프앤하프 주문 공지 */
-.order_notice >span{
+.order_notice>span {
     display: block;
     font-size: 14px;
     font-weight: bolder;
 }
 
 /* 수량 */
-.detail_halfnhalf_num_count_wrap{
+.detail_halfnhalf_num_count_wrap {
     padding: 2rem 0 0;
-    margin-right: 30px;
+    margin-right: 45px;
     text-align: right;
-    border-bottom:0.5rem solid #f3f8f9;
 }
 
 
-.num_count_box{
+.num_count_box {
     display: inline-flex;
 }
 
-.num_count_wrap_main{
+.num_count_wrap_main {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -231,7 +236,7 @@
     border: 1px solid #ebebeb;
 }
 
-.btnL{
+.btnL {
     cursor: pointer;
     width: 3rem;
     height: 3rem;
@@ -243,7 +248,7 @@
 }
 
 
-.btnR{
+.btnR {
     cursor: pointer;
     width: 3rem;
     height: 3rem;
@@ -257,7 +262,7 @@
 
 
 
-.num_count_value{
+.num_count_value {
     width: 9rem;
     height: 3rem;
     text-align: center;
@@ -267,7 +272,7 @@
 }
 
 /* 가격 */
-.fixed_payment_wrap{
+.fixed_payment_wrap {
     position: fixed;
     left: 0;
     bottom: 0;
@@ -277,7 +282,7 @@
     height: 6rem;
 }
 
-.fixed_payment_box{
+.fixed_payment_box {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -286,17 +291,17 @@
     margin: 0 auto;
 }
 
-.txt_wrap{
+.txt_wrap {
     text-align: right;
 }
 
-.fixed_payment_wrap .label{
+.fixed_payment_wrap .label {
     display: inline-block;
     font-size: 1.3rem;
     color: #ffffff;
 }
 
-.fixed_payment_wrap .price{
+.fixed_payment_wrap .price {
     display: inline-block;
     margin-left: 1rem;
     font-weight: 700;
@@ -306,7 +311,7 @@
 
 /* 주문하기 버튼 */
 
-.fixed_payment_box button{
+.fixed_payment_box button {
     margin: 0;
     padding: 0 1rem 0 0;
     background: transparent;
@@ -317,7 +322,7 @@
     cursor: pointer;
 }
 
-.buttonIcon{
+.buttonIcon {
     height: 4rem;
     padding-right: 6px;
     margin-bottom: 6px;
