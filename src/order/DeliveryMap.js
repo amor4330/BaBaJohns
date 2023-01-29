@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import UserContext from "../context/UserContext";
 
 const { kakao } = window;
@@ -31,7 +31,6 @@ const DeliveryMap = () => {
     return dist;
   }
 
-  const [name, setName] = useState('');
 
   const tmp = 0;
   useEffect(() => {
@@ -64,15 +63,10 @@ const DeliveryMap = () => {
               var tmpCoords = new kakao.maps.LatLng(result[0].y, result[0].x);
 
               distance = getDistance(reqCoords.La, reqCoords.Ma, tmpCoords.La, tmpCoords.Ma) / 1000;
-              console.log(distance)
-              console.log(total.delAddr.basicAddr)
-              console.log(total.closeBranch)
-              console.log(item.addr)
 
               if (calMin > distance) {
                 calMin = distance;
-                total.action.setCloseBranch(item.addr);
-                setName(item.branch)
+                total.action.setCloseBranch({branch: item.branch, addr: item.addr});
               }
             }
           })
@@ -99,7 +93,7 @@ const DeliveryMap = () => {
     // 주소-좌표 변환 객체를 생성합니다
     const geocoder = new kakao.maps.services.Geocoder();
 
-    geocoder.addressSearch(total.closeBranch, function (result, status) {
+    geocoder.addressSearch(total.closeBranch.addr, function (result, status) {
 
       // 정상적으로 검색이 완료됐으면 
       if (status === kakao.maps.services.Status.OK) {
@@ -114,7 +108,7 @@ const DeliveryMap = () => {
 
         // 인포윈도우로 장소에 대한 설명을 표시합니다
         var infowindow = new kakao.maps.InfoWindow({
-          content: '<div style="width:100%;text-align:center;padding:6px 0;">바바존스 ' + name + '</div>'
+          content: '<div style="width:100%;text-align:center;padding:6px 0;">바바존스 ' + total.closeBranch.branch + '</div>'
         });
         infowindow.open(map, marker);
 
@@ -127,7 +121,8 @@ const DeliveryMap = () => {
 
   }, [total.closeBranch])
 
-  return <div id="map" style={{ width: "350px", height: "245px" }}></div>
+  return <div id="map" style={{ 
+    marginLeft: "55px", width: "740px", height: "245px" }}></div>
 
 }
 

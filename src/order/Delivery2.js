@@ -51,14 +51,14 @@ const Delivery2 = () => {
             </div>
 
             <div className={delivery.input_container}>
-                <p className={delivery.address}>배달 가능 매장 : </p>
+                <p className={delivery.address}>배달 가능 매장 : {total.closeBranch.branch} </p>
                 <input type="text" className={delivery.address} placeholder="기본 주소" value = {total.delAddr.basicAddr}/>
                 <input type="text" className={delivery.address} placeholder="상세 주소" onChange = {handleChange} value = {total.delAddr.detailAddr}/>
             </div>
 
             {/* 지도 API 추가 */}
             
-            {total.delAddr.basicAddr.length > 1 ? <DeliveryMap/> : null}
+            {total.delAddr.basicAddr.length > 1 ? <DeliveryMap className = {delivery.map}/> : null}
             
 
         </>
