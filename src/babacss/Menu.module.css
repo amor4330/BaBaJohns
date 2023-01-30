@@ -6,16 +6,20 @@
 }
 
 .all_content {
+    border-bottom: 0.5rem solid #f3f8f9;
     width: 60%;
     margin: 0 auto;
 }
 
 /* 메뉴고르는 전체 틀 */
 .mainselect {
+    width: 60%;
+    margin: 0 auto;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
     align-items: center;
+    
 }
 
 .detail_main_wrap {
